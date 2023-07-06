@@ -9,9 +9,9 @@ const app = express();
 const env = process.env;
 const redisUri = `redis://${env.REDIS_HOST}:${env.REDIS_PORT}`;
 const dbUri = `mongodb://${env.DB_USER}:${env.DB_PASSWORD}@${env.DB_HOST}:${env.DB_PORT}`;
-const pgUri = `postgresql://${env.DB_USER}:${env.DB_PASSWORD}@${env.DB_HOST}:${env.DB_PORT}`;
+// const pgUri = `postgresql://${env.DB_USER}:${env.DB_PASSWORD}@${env.DB_HOST}:${env.DB_PORT}`;
 
-// mongoose.connect(dbUri).then( () => console.log('Database connected successfully !')).catch(err => console.log(err));
+mongoose.connect(dbUri).then( () => console.log('Database connected successfully !')).catch(err => console.log(err));
 
 // redis
 
@@ -27,11 +27,11 @@ redisClient.connect();
 
 
 // postgresql
-const pgClient = new pg.Client({
-    connectionString: pgUri
-})
+// const pgClient = new pg.Client({
+//     connectionString: pgUri
+// })
 
-pgClient.connect().then( () => console.log('PG Database connected successfully !')).catch(err => console.log(err));
+// pgClient.connect().then( () => console.log('PG Database connected successfully !')).catch(err => console.log(err));
 // postgresql
 
 app.get('/', (req, res) => {
