@@ -54,9 +54,12 @@ services:
       POSTGRES_PASSWORD: example/
 volumes:
   mongo-db:
-    driver: bridge
   postgres-db:
-    driver: bridge
+
+networks:
+  default:
+    external:
+      name: bridge
 
 
 
