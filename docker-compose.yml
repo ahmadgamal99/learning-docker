@@ -3,12 +3,12 @@ services:
   express-node-app:
     build:
       context: .
-      target: development
+      target: production
     container_name: express-node-app-container
     volumes:
       - ./src:/app/src:ro
     ports:
-      - "${PORT:-3000}:${PORT:-3000}"
+      - "${PORT:-3500}:${PORT:-3500}"
     depends_on:
       - mongo
       - redis
@@ -46,8 +46,8 @@ services:
 volumes:
   mongo-db:
     driver: local
-  postgres-db:
-    driver: local
+#  postgres-db:
+#    driver: local
 
 
 #  postgres:
