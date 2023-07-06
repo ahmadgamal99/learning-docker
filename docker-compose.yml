@@ -56,10 +56,8 @@ services:
 volumes:
   mongo-db:
     driver: local
-    external: true
   postgres-db:
     driver: local
-    external: true
 
 
 
