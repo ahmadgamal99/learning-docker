@@ -55,6 +55,7 @@ services:
       POSTGRES_PASSWORD: example/
 volumes:
   mongo-db:
+  postgres-db:
 
 
 
