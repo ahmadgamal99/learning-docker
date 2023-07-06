@@ -43,19 +43,20 @@ services:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - express-node-app
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USERNAME: root
+      POSTGRES_PASSWORD: example/
 volumes:
   mongo-db:
     driver: local
-#  postgres-db:
-#    driver: local
+  postgres-db:
+    driver: local
 
 
-#  postgres:
-#    container_name: postgres
-#    image: postgres
-#    restart: always
-#    volumes:
-#      - postgres-db:/var/lib/postgresql/data
-#    environment:
-#      POSTGRES_USERNAME: root
-#      POSTGRES_PASSWORD: example/
+
