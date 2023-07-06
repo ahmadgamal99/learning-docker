@@ -10,7 +10,6 @@ services:
     ports:
       - "${PORT:-3000}:${PORT:-3000}"
     depends_on:
-      - postgres
       - redis
   mongo:
     container_name: mongo
