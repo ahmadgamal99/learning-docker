@@ -12,6 +12,7 @@ services:
     depends_on:
       - mongo
       - redis
+    network_mode: bridge
   mongo:
     container_name: mongo
     image: mongo
@@ -52,11 +53,11 @@ services:
     environment:
       POSTGRES_USERNAME: root
       POSTGRES_PASSWORD: example/
-
-networks:
-  default:
-    external:
-      name: bridge
+volumes:
+  mongo-db:
+    external: true
+  postgres-db:
+    external: true
 
 
 
