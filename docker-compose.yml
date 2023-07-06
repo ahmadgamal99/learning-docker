@@ -55,8 +55,10 @@ services:
       POSTGRES_PASSWORD: example/
 volumes:
   mongo-db:
+    driver: local
     external: true
   postgres-db:
+    driver: local
     external: true
 
 
