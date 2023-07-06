@@ -52,11 +52,6 @@ services:
     environment:
       POSTGRES_USERNAME: root
       POSTGRES_PASSWORD: example/
-volumes:
-  mongo-db:
-    driver: bridge
-  postgres-db:
-    driver: bridge
 
 networks:
   default:
